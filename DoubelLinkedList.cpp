@@ -28,13 +28,13 @@ public:
         cout << "\nEnter the roll number of the student: ";
         cin >> nim;
 
-        //step 1 : Allocate memory for new node
+        // Step 1 : Allocate memory for new node
         Node *newNode = new Node();
 
-        //step 2: Assign value to the data fields
+        // Step 2: Assign value to the data fields
         newNode->noMhs = nim;
 
-        //step 3: Insert at begining if List is empty or nim is smallest
+        // Step 3: Insert at beginning if List is empty or nim is smallest
         if (START == NULL || nim <= START->noMhs)
         {
             if (START != NULL && nim == START->noMhs)
@@ -43,23 +43,23 @@ public:
                 return;
             }
 
-            //step 4: newNode.next = START
+            // Step 4: newNode.next = START
             newNode->next = START;
             
-            //step 5 START.prev = newNode (if START exists)
+            // Step 5 : START.prev = newNode (if START exists)
             if (START != NULL)
                 START->prev = newNode;
                 
-            // step 6: newNode.prev = NULL    
+            // Step 6 : newNode.prev = NULL    
             newNode->prev = NULL;
 
-            //step 7: START = newNode
+            // Step 7 : START = newNode
             START = newNode;
             return;
         }
 
-        //insert in between node 
-        //step 8: Locate position for insertion 
+        // Insert in between node 
+        // Step 8 : Locate position for insertion 
         Node *current = START;
         while (current->next != NULL && current->next->noMhs < nim)
         {
@@ -72,15 +72,15 @@ public:
             return;
         }
 
-        //strep 9: insert between current and current->next
-        newNode->next = current->next; // step 9a: newNode.next = current.next
-        newNode->prev = current; // step 9b: newNode.prev = current
+        // Strep 9 : insert between current and current->next
+        newNode->next = current->next; // Step 9a : newNode.next = current.next
+        newNode->prev = current; // Step 9b : newNode.prev = current
         
         //insert last node 
         if (current->next != NULL)
-            current->next->prev = newNode; //step 9c: current.next.orev =newNode
+            current->next->prev = newNode; // Step 9c : current.next.orev =newNode
 
-        current->next = newNode; //step 9b: current.next = newNode
+        current->next = newNode; // Step 9b : current.next = newNode
     }
 
     void hapus()
@@ -128,5 +128,13 @@ public:
         delete current;
         cout << "Record with roll number " << rollNo << " deleted" << endl;
     }
+
+    void traverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
 
 }
