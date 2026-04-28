@@ -71,5 +71,10 @@ public:
             cout << "\nDuplicate roll numbers nit allaowed" << endl;
             return;
         }
+
+        //strep 9: insert between current and current->next
+        newNode->next = current->next;
+        newNode->prev = current;
+
     }
 }
