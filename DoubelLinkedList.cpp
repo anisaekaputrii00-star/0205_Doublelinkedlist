@@ -13,8 +13,13 @@ class Node
 
 class DoubelLinkedList
 {
-    private:
+private:
     Node *START;
 
 public:
+    DoubelLinkedList()
+    {
+        START = NULL;
+    }
+    
 }
