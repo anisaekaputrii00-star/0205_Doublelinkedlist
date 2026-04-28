@@ -170,4 +170,16 @@ public:
             currentNode = currentNode->next;
             i++;
         }
+
+        // Step 2: Traverse backward
+        cout << "\nRecords in descending order of roll number are:\n";
+        while (currentNode != NULL)
+        {
+            cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+
+            // Step 3: Move to previous node
+            currentNode = currentNode->prev;
+            i--;
+        }
+    }
 }
