@@ -153,4 +153,12 @@ public:
             i++;
         }
     }
+
+      void revtraverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
 }
