@@ -10,3 +10,11 @@ class Node
     Node *next;
     Node *prev;
 };
+
+class DoubelLinkedList
+{
+    private:
+    Node *START;
+
+public:
+}
